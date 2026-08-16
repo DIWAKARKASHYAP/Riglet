@@ -469,6 +469,10 @@ a {
   color: var(--pass);
 }
 
+.form-msg.is-error {
+  color: var(--fail);
+}
+
 .sr {
   position: absolute;
   width: 1px;

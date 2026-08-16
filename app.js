@@ -1,3 +1,5 @@
+import { submitWaitlist } from "./waitlist.js";
+
 const region = document.getElementById("region");
 const debugUser = document.getElementById("debugUser");
 const tax = document.getElementById("tax");
@@ -32,14 +34,26 @@ confirmBtn.addEventListener("click", () => {
   confirmBtn.disabled = true;
 });
 
-form.addEventListener("submit", (event) => {
+form.addEventListener("submit", async (event) => {
   event.preventDefault();
-  const email = new FormData(form).get("email");
-  const key = "riglet-waitlist";
-  const existing = JSON.parse(localStorage.getItem(key) || "[]");
-  if (!existing.includes(email)) existing.push(email);
-  localStorage.setItem(key, JSON.stringify(existing));
-  formMsg.hidden = false;
-  formMsg.textContent = "Saved on this machine. We’ll use this list when builds ship.";
-  form.reset();
+  const email = String(new FormData(form).get("email") || "");
+  const button = form.querySelector('button[type="submit"]');
+  formMsg.hidden = true;
+  formMsg.classList.remove("is-error");
+  button.disabled = true;
+
+  try {
+    await submitWaitlist(email);
+    formMsg.classList.remove("is-error");
+    formMsg.textContent = "You’re on the Riglet waitlist.";
+    formMsg.hidden = false;
+    form.reset();
+  } catch (error) {
+    formMsg.classList.add("is-error");
+    formMsg.textContent =
+      error instanceof Error ? error.message : "Waitlist submission failed";
+    formMsg.hidden = false;
+  } finally {
+    button.disabled = false;
+  }
 });
