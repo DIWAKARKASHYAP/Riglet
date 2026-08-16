@@ -34,3 +34,31 @@ body {
   background: var(--color-accent);
   color: #04140a;
 }
+
+@keyframes cursor-ripple {
+  0% {
+    transform: translate(-50%, -50%) scale(0.35);
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(2.4);
+    opacity: 0;
+  }
+}
+
+.cursor-ripple {
+  animation: cursor-ripple 520ms ease-out forwards;
+}
+
+@keyframes panel-fade {
+  from {
+    opacity: 0.35;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.panel-fade {
+  animation: panel-fade 280ms ease-out;
+}

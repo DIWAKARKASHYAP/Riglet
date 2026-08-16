@@ -173,6 +173,31 @@ export default function App() {
           </div>
         </section>
 
+        <section className="border-t border-line">
+          <div className="mx-auto grid max-w-6xl gap-px bg-line px-0 md:grid-cols-2">
+            <figure className="bg-void">
+              <img
+                src="/riglet-intercept.png"
+                alt="Network intercept panel rewriting PATCH /v1/cart"
+                className="w-full"
+              />
+              <figcaption className="border-t border-line px-5 py-3 font-mono text-xs text-mute">
+                intercept · mock · rewrite
+              </figcaption>
+            </figure>
+            <figure className="bg-void">
+              <img
+                src="/riglet-agent.png"
+                alt="Agent trace with numbered page refs"
+                className="w-full"
+              />
+              <figcaption className="border-t border-line px-5 py-3 font-mono text-xs text-mute">
+                agent trace · @e refs
+              </figcaption>
+            </figure>
+          </div>
+        </section>
+
         <section id="features" className="border-t border-line">
           <div className="mx-auto max-w-6xl px-5 py-16 md:px-8">
             <h2 className="font-mono text-2xl md:text-3xl">Raw control</h2>
@@ -193,6 +218,11 @@ export default function App() {
             <h2 className="font-mono text-2xl md:text-3xl">How it works</h2>
             <ol className="mt-10 grid gap-8 md:grid-cols-3">
               <li>
+                <img
+                  src="/riglet-lab.png"
+                  alt="Open a site in an isolated Riglet profile"
+                  className="mb-4 w-full border border-line"
+                />
                 <span className="font-mono text-accent">01</span>
                 <p className="mt-2 font-mono">Open any site</p>
                 <p className="mt-1 text-sm text-mute">
@@ -200,6 +230,11 @@ export default function App() {
                 </p>
               </li>
               <li>
+                <img
+                  src="/riglet-intercept.png"
+                  alt="Intercept and rewrite a live HTTP request"
+                  className="mb-4 w-full border border-line"
+                />
                 <span className="font-mono text-accent">02</span>
                 <p className="mt-2 font-mono">Tell it what to do</p>
                 <p className="mt-1 text-sm text-mute">
@@ -207,6 +242,11 @@ export default function App() {
                 </p>
               </li>
               <li>
+                <img
+                  src="/riglet-agent.png"
+                  alt="Agent trace of clicks and keystrokes"
+                  className="mb-4 w-full border border-line"
+                />
                 <span className="font-mono text-accent">03</span>
                 <p className="mt-2 font-mono">Watch it act</p>
                 <p className="mt-1 text-sm text-mute">
