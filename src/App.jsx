@@ -97,8 +97,8 @@ export default function App() {
   return (
     <div className="grid-bg min-h-screen">
       <header className="sticky top-0 z-20 flex items-center gap-6 border-b border-line bg-void/90 px-5 py-3 backdrop-blur md:px-8">
-        <a href="#top" className="flex items-center">
-          <img src="/logo.png" alt="Riglet" className="h-9 w-auto" />
+        <a href="#top" className="font-mono text-lg tracking-tight">
+          riglet
         </a>
         <nav className="ml-auto hidden gap-5 font-mono text-xs text-mute md:flex">
           <a href="#compare">Compare</a>
@@ -120,12 +120,8 @@ export default function App() {
             <p className="font-mono text-[11px] uppercase tracking-[0.2em] text-accent">
               windows · no sandbox theater
             </p>
-            <h1 className="mt-4">
-              <img
-                src="/logo.png"
-                alt="Riglet"
-                className="h-28 w-auto md:h-36"
-              />
+            <h1 className="mt-3 font-mono text-5xl tracking-tight md:text-7xl">
+              riglet
             </h1>
             <p className="mt-4 max-w-md text-lg leading-snug text-mute">
               The browser that does what you tell it. No sandbox, no permission
@@ -330,9 +326,7 @@ riglet.agent.run("log into the dashboard and export last month's invoices");`}</
 
       <footer className="border-t border-line">
         <div className="mx-auto flex max-w-6xl flex-wrap items-center gap-4 px-5 py-8 font-mono text-xs text-mute md:px-8">
-          <a href="#top" className="flex items-center">
-            <img src="/logo.png" alt="Riglet" className="h-8 w-auto" />
-          </a>
+          <span className="text-ink">riglet</span>
           <a href={GITHUB_URL}>GitHub</a>
           <a href={GITHUB_URL}>Docs</a>
           <a href={GITHUB_URL}>Changelog</a>
