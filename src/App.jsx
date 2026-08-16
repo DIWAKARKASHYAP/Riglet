@@ -45,14 +45,15 @@ function Waitlist() {
 
   async function onSubmit(event) {
     event.preventDefault();
-    const email = String(new FormData(event.currentTarget).get("email") || "");
+    const form = event.currentTarget;
+    const email = String(new FormData(form).get("email") || "");
     setBusy(true);
     setMsg("");
     try {
       await submitWaitlist(email);
       setErr(false);
       setMsg("On the list. We’ll mail you when macOS and Linux ship.");
-      event.currentTarget.reset();
+      form.reset();
     } catch (error) {
       setErr(true);
       setMsg(error instanceof Error ? error.message : "Waitlist submission failed");
